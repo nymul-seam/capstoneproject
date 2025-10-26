@@ -1,0 +1,41 @@
+{
+  "name": "wapacro/az-keyvault-php",
+  "type": "library",
+  "description": "PHP Library to work with Azure KeyVault using managed identity",
+  "keywords": [
+    "azure",
+    "keyvault",
+    "secret"
+  ],
+  "homepage": "https://github.com/wapacro/az-keyvault-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roman Ackermann",
+      "homepage": "https://github.com/wapacro"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*",
+    "ext-gmp": "*",
+    "spatie/url": "^1.3",
+    "web-token/jwt-core": "^2.0",
+    "brick/math": "^0.9.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "AzKeyVault\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AzKeyVault\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "ext-openssl": "*",
+    "phpunit/phpunit": "^9.0",
+    "friendsofphp/php-cs-fixer": "^2.16"
+  }
+}
