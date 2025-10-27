@@ -33,7 +33,7 @@
                     break;
 
                 case "Q5":
-                    include 'childmortality.php'; // Updated filename
+                    include 'mortality.php'; // Updated filename
                     break;
 
                 default:
@@ -46,6 +46,7 @@
         </div>
     </body>
 </html>
+
 
 
 
