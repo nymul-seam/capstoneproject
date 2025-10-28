@@ -6,6 +6,7 @@
 table {
      width: 80%;
      border-collapse: collapse;
+     margin-top: 20px;
 }
 th, td {
      text-align: left;
@@ -27,11 +28,12 @@ error_reporting(E_ALL);
 // ✅ Include connection parameters
 include './parameters/get-parameters.php';
 
-// ✅ Connect to MySQL (no SSL for now)
+// ✅ Connect to MySQL (SSL temporarily disabled for testing)
 $conn = new mysqli($host, $username, $password, $db_name, 3306);
 
+// ✅ Check connection status
 if ($conn->connect_error) {
-    die("<p>❌ Connection failed: " . $conn->connect_error . "</p>");
+    die("<p>❌ Connection failed: " . htmlspecialchars($conn->connect_error) . "</p>");
 } else {
     echo "<p>✅ Connected to amandadb successfully.</p>";
 
