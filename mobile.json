@@ -1,0 +1,7 @@
+[
+  { "id": 1, "country": "Australia", "year": 2020, "subscriptions_per_100": 110.25 },
+  { "id": 2, "country": "Bangladesh", "year": 2020, "subscriptions_per_100": 97.54 },
+  { "id": 3, "country": "United States", "year": 2020, "subscriptions_per_100": 122.33 },
+  { "id": 4, "country": "India", "year": 2020, "subscriptions_per_100": 88.75 },
+  { "id": 5, "country": "Brazil", "year": 2020, "subscriptions_per_100": 98.61 }
+]

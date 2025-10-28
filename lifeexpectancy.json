@@ -1,0 +1,7 @@
+[
+  { "id": 1, "country": "Australia", "year": 2020, "life_expectancy": 83.4 },
+  { "id": 2, "country": "Bangladesh", "year": 2020, "life_expectancy": 72.6 },
+  { "id": 3, "country": "United States", "year": 2020, "life_expectancy": 78.8 },
+  { "id": 4, "country": "India", "year": 2020, "life_expectancy": 68.8 },
+  { "id": 5, "country": "Brazil", "year": 2020, "life_expectancy": 75.9 }
+]

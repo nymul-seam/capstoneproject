@@ -1,0 +1,7 @@
+[
+  { "id": 1, "country": "Australia", "year": 2020, "mortality_rate_per_1000": 3.10 },
+  { "id": 2, "country": "Bangladesh", "year": 2020, "mortality_rate_per_1000": 26.90 },
+  { "id": 3, "country": "United States", "year": 2020, "mortality_rate_per_1000": 6.00 },
+  { "id": 4, "country": "India", "year": 2020, "mortality_rate_per_1000": 28.30 },
+  { "id": 5, "country": "Brazil", "year": 2020, "mortality_rate_per_1000": 13.20 }
+]

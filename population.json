@@ -1,0 +1,7 @@
+[
+  { "id": 1, "country": "Australia", "year": 2020, "population": 25687041 },
+  { "id": 2, "country": "Bangladesh", "year": 2020, "population": 164689383 },
+  { "id": 3, "country": "United States", "year": 2020, "population": 331002651 },
+  { "id": 4, "country": "India", "year": 2020, "population": 1380004385 },
+  { "id": 5, "country": "Brazil", "year": 2020, "population": 212559417 }
+]

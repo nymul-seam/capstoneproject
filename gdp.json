@@ -1,0 +1,7 @@
+[
+  { "id": 1, "country": "Australia", "year": 2021, "gdp_per_capita": 57400.00 },
+  { "id": 2, "country": "Australia", "year": 2022, "gdp_per_capita": 60300.00 },
+  { "id": 3, "country": "Australia", "year": 2023, "gdp_per_capita": 62250.00 },
+  { "id": 4, "country": "Australia", "year": 2024, "gdp_per_capita": 64500.00 },
+  { "id": 5, "country": "Australia", "year": 2025, "gdp_per_capita": 67900.00 }
+]
