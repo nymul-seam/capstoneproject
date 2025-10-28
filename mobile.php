@@ -1,32 +1,43 @@
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-require_once __DIR__ . '/db_connect.php';
-
-$table = 'mobile';
-$res = $conn->query("SELECT * FROM `$table` LIMIT 100");
-$rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
-$cols = array_keys($rows[0] ?? []);
-?>
-<!doctype html><html><head><meta charset="utf-8"><title>Mobile — Results</title>
 <style>
-#pickquery{height:50px;width:180px}
-table{width:90%;border-collapse:collapse;margin-top:16px}
-th,td{border:1px solid #ddd;padding:6px 8px;text-align:left}
-th{background:#f6f6f6}
-body{font-family:system-ui,Arial,sans-serif}
-</style></head><body>
-<form action="query.php"><input type="submit" id="pickquery" value="Pick another query"></form>
-<h2>Mobile table (first 100 rows)</h2>
-<?php if (!$rows): ?>
-  <p>No data found in <code>mobile</code>.</p>
-<?php else: ?>
-  <table><thead><tr>
-    <?php foreach ($cols as $c): ?><th><?= htmlspecialchars($c) ?></th><?php endforeach; ?>
-  </tr></thead><tbody>
-    <?php foreach ($rows as $r): ?><tr>
-      <?php foreach ($cols as $c): ?><td><?= htmlspecialchars((string)$r[$c]) ?></td><?php endforeach; ?>
-    </tr><?php endforeach; ?>
-  </tbody></table>
-<?php endif; ?>
-</body></html>
+#pickquery {
+    height: 50px;
+    width: 150px;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+</style>
+
+<form action='query.php'>
+  <input type="submit" id="pickquery" value="Pick another query">
+</form>
+
+<?php
+$jsonData = file_get_contents('./data/mobile.json');
+$data = json_decode($jsonData, true);
+
+if ($data && count($data) > 0) {
+    echo '<h3>Mobile Subscriptions per 100 People (Demo Data)</h3>';
+    echo '<table>';
+    echo '<tr><th>Country</th><th>Year</th><th>Subscriptions per 100</th></tr>';
+    foreach ($data as $row) {
+        echo '<tr>';
+        echo '<td>' . htmlspecialchars($row["country"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["year"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["subscriptions_per_100"]) . '</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+} else {
+    echo "<p>No demo data available.</p>";
+}
+?>
+
+
