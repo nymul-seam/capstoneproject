@@ -28,33 +28,44 @@ error_reporting(E_ALL);
 // ✅ Include correct parameters
 include './parameters/get-parameters.php';
 
-// ✅ Correct connection order: host, username, password, db_name, port
+// ✅ Attempt connection
 $conn = new mysqli($host, $username, $password, $db_name, 3306);
 
+// ✅ If connection fails, show fallback data
 if ($conn->connect_error) {
-    die("<p>❌ Connection failed: " . htmlspecialchars($conn->connect_error) . "</p>");
-} else {
-    echo "<p>✅ Connected to amandadb successfully.</p>";
+    echo "<p>⚠️ Database unreachable. Showing fallback data instead.</p>";
+    echo '<h3>Mobile Subscriptions per 100 People (Fallback)</h3>';
+    echo '<table>';
+    echo '<tr><th>Country</th><th>Year</th><th>Subscriptions per 100</th></tr>';
+    echo '<tr><td>Australia</td><td>2021</td><td>105.2</td></tr>';
+    echo '<tr><td>New Zealand</td><td>2021</td><td>120.3</td></tr>';
+    echo '<tr><td>India</td><td>2021</td><td>85.6</td></tr>';
+    echo '</table>';
+    return;
+}
 
-    $sql = "SELECT country, year, subscriptions_per_100 FROM mobile ORDER BY year ASC";
-    $result = $conn->query($sql);
+// ✅ If connection succeeds, run live query
+echo "<p>✅ Connected to amandadb successfully.</p>";
 
-    if ($result && $result->num_rows > 0) {
-        echo '<h3>Mobile Subscriptions per 100 People</h3>';
-        echo '<table>';
-        echo '<tr><th>Country</th><th>Year</th><th>Subscriptions per 100</th></tr>';
-        while ($row = $result->fetch_assoc()) {
-            echo '<tr>';
-            echo '<td>' . htmlspecialchars($row["country"]) . '</td>';
-            echo '<td>' . htmlspecialchars($row["year"]) . '</td>';
-            echo '<td>' . htmlspecialchars($row["subscriptions_per_100"]) . '</td>';
-            echo '</tr>';
-        }
-        echo '</table>';
-    } else {
-        echo "<p>⚠️ No data found in the mobile table.</p>";
+$sql = "SELECT country, year, subscriptions_per_100 FROM mobile ORDER BY year ASC";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    echo '<h3>Mobile Subscriptions per 100 People</h3>';
+    echo '<table>';
+    echo '<tr><th>Country</th><th>Year</th><th>Subscriptions per 100</th></tr>';
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td>' . htmlspecialchars($row["country"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["year"]) . '</td>';
+        echo '<td>' . htmlspecialchars($row["subscriptions_per_100"]) . '</td>';
+        echo '</tr>';
     }
+    echo '</table>';
+} else {
+    echo "<p>⚠️ No data found in the mobile table.</p>";
 }
 ?>
+
 
 
