@@ -20,24 +20,22 @@ th, td {
 </form>
 
 <?php
-// ✅ Enable error reporting for debugging
+// ✅ Enable error reporting
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// ✅ Include connection parameters
+// ✅ Include correct parameters
 include './parameters/get-parameters.php';
 
-// ✅ Connect to MySQL (SSL temporarily disabled for testing)
+// ✅ Correct connection order: host, username, password, db_name, port
 $conn = new mysqli($host, $username, $password, $db_name, 3306);
 
-// ✅ Check connection status
 if ($conn->connect_error) {
     die("<p>❌ Connection failed: " . htmlspecialchars($conn->connect_error) . "</p>");
 } else {
     echo "<p>✅ Connected to amandadb successfully.</p>";
 
-    // ✅ Query the mobile table
     $sql = "SELECT country, year, subscriptions_per_100 FROM mobile ORDER BY year ASC";
     $result = $conn->query($sql);
 
@@ -58,4 +56,5 @@ if ($conn->connect_error) {
     }
 }
 ?>
+
 
