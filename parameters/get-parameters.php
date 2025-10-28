@@ -9,9 +9,7 @@
 $host     = 'mysql-amanda-md.mysql.database.azure.com';       // Your MySQL server hostname
 $username = 'mysqladmin@mysql-amanda-md';                     // Your MySQL username
 $password = 'Test1234';                                       // Your MySQL password
-$db_name  = 'amandadb';                                       // Your database name
-$sslcert  = 'ssl/DigiCertGlobalRootCA.crt.pem';               // Path to your SSL certificate
-
+$db_name  = 'amandadb';                                       // Your database name           
 // =====================================================================================
 // OPTIONAL: If you later switch to Azure Key Vault, uncomment and configure below
 // =====================================================================================
