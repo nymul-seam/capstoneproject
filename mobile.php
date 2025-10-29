@@ -35,29 +35,23 @@
 </style>
 
 
-<h2>Mobile Phone Usage by Country</h2>
-<table border="1" cellpadding="8" cellspacing="0">
+<h2>Mobile Subscriptions per 100 People (2020)</h2>
+<table border="1">
   <tr>
+    <th>ID</th>
     <th>Country</th>
     <th>Year</th>
-    <th>Mobile Users (millions)</th>
+    <th>Subscriptions per 100</th>
   </tr>
-  <tr>
-    <td>Australia</td>
-    <td>2022</td>
-    <td>25.3</td>
-  </tr>
-  <tr>
-    <td>India</td>
-    <td>2022</td>
-    <td>1200</td>
-  </tr>
-  <tr>
-    <td>Brazil</td>
-    <td>2022</td>
-    <td>210</td>
-  </tr>
+  <tr><td>1</td><td>Australia</td><td>2020</td><td>110.25</td></tr>
+  <tr><td>2</td><td>Bangladesh</td><td>2020</td><td>122.33</td></tr>
+  <tr><td>3</td><td>United States</td><td>2020</td><td>97.43</td></tr>
+  <tr><td>4</td><td>India</td><td>2020</td><td>82.18</td></tr>
+  <tr><td>5</td><td>Brazil</td><td>2020</td><td>98.61</td></tr>
 </table>
+
+
+
 
 
 
