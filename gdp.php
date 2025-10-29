@@ -1,52 +1,28 @@
-<style>
-#pickquery {
-     height: 50px;
-     width: 150px;
-}
-</style>
+<h2>GDP by Country</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th>Country</th>
+    <th>Year</th>
+    <th>GDP (USD trillions)</th>
+  </tr>
+  <tr>
+    <td>Australia</td>
+    <td>2022</td>
+    <td>1.7</td>
+  </tr>
+  <tr>
+    <td>India</td>
+    <td>2022</td>
+    <td>3.7</td>
+  </tr>
+  <tr>
+    <td>Brazil</td>
+    <td>2022</td>
+    <td>1.9</td>
+  </tr>
+</table>
 
-<form action='query.php' size=20px>          
-  <input type="submit" id="pickquery" value="Pick another query">
-</form>
 
-<?php
-include 'get-parameters.php';
-
-// Original query
-$sql = "select name, gdp from countrydata_table;";
-$conn = mysqli_init();
-mysqli_ssl_set($conn,NULL,NULL, "$sslcert", NULL, NULL);
-mysqli_real_connect($conn, "$host", "$username", "$password", "$db_name", 3306, MYSQLI_CLIENT_SSL);
-
-if ($conn->connect_error) {
-    error_log('Connection error: ' . $conn->connect_error);
-    var_dump('Connection error: ' . $conn->connect_error);
-} else {
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo '<h3>Legacy GDP Data</h3>';
-        echo '<table style="width: 80%">';
-        echo '<tr><th style="text-align:left">This is a Country Name</th><th style="text-align:left">Gross Domestic Product</th></tr>';
-        while($row = $result->fetch_assoc()) {
-            echo '<tr><td>' . $row["name"] . '&nbsp</td><td>' . $row["gdp"] . '&nbsp</td></tr>';
-        }
-        echo '</table>';
-    }
-
-    // New GDP table integration
-    $sql2 = "SELECT country, year, gdp_per_capita FROM gdp ORDER BY year ASC";
-    $result2 = $conn->query($sql2);
-    if ($result2->num_rows > 0) {
-        echo '<h3>Updated GDP per Capita</h3>';
-        echo '<table style="width: 80%">';
-        echo '<tr><th style="text-align:left">Country</th><th style="text-align:left">Year</th><th style="text-align:left">GDP per Capita</th></tr>';
-        while($row = $result2->fetch_assoc()) {
-            echo '<tr><td>' . $row["country"] . '</td><td>' . $row["year"] . '</td><td>' . $row["gdp_per_capita"] . '</td></tr>';
-        }
-        echo '</table>';
-    }
-}
-?>
 
 
 
