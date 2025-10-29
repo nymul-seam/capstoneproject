@@ -34,7 +34,7 @@
   }
 </style>
 
-<h2>Mortality Rate per 1000 People (2020)</h2>
+<h2>Childhood Mortality Rate per 1000 People (2020)</h2>
 <table border="1">
   <tr>
     <th>ID</th>
@@ -48,6 +48,7 @@
   <tr><td>4</td><td>India</td><td>2020</td><td>6.00</td></tr>
   <tr><td>5</td><td>Brazil</td><td>2020</td><td>13.20</td></tr>
 </table>
+
 
 
 
