@@ -34,28 +34,23 @@
   }
 </style>
 
-<h2>Population Statistics</h2>
-<table border="1" cellpadding="8" cellspacing="0">
+<h2>Population (2020)</h2>
+<table border="1">
   <tr>
+    <th>ID</th>
     <th>Country</th>
     <th>Year</th>
-    <th>Population (millions)</th>
+    <th>Population</th>
   </tr>
-  <tr>
-    <td>Australia</td>
-    <td>2022</td>
-    <td>26.0</td>
-  </tr>
-  <tr>
-    <td>India</td>
-    <td>2022</td>
-    <td>1400</td>
-  </tr>
-  <tr>
-    <td>Brazil</td>
-    <td>2022</td>
-    <td>215</td>
-  </tr>
+  <tr><td>1</td><td>Australia</td><td>2020</td><td>25687041</td></tr>
+  <tr><td>2</td><td>Bangladesh</td><td>2020</td><td>164689383</td></tr>
+  <tr><td>3</td><td>United States</td><td>2020</td><td>331002651</td></tr>
+  <tr><td>4</td><td>India</td><td>2020</td><td>1380004385</td></tr>
+  <tr><td>5</td><td>Brazil</td><td>2020</td><td>212559417</td></tr>
 </table>
+
+
+
+
 
 
