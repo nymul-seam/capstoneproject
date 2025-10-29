@@ -35,29 +35,21 @@
 </style>
 
 
-<h2>GDP by Country</h2>
-<table border="1" cellpadding="8" cellspacing="0">
+<h2>GDP per Capita (Australia, 2021–2025)</h2>
+<table border="1">
   <tr>
+    <th>ID</th>
     <th>Country</th>
     <th>Year</th>
-    <th>GDP (USD trillions)</th>
+    <th>GDP per Capita</th>
   </tr>
-  <tr>
-    <td>Australia</td>
-    <td>2022</td>
-    <td>1.7</td>
-  </tr>
-  <tr>
-    <td>India</td>
-    <td>2022</td>
-    <td>3.7</td>
-  </tr>
-  <tr>
-    <td>Brazil</td>
-    <td>2022</td>
-    <td>1.9</td>
-  </tr>
+  <tr><td>1</td><td>Australia</td><td>2021</td><td>57400.00</td></tr>
+  <tr><td>2</td><td>Australia</td><td>2022</td><td>60300.00</td></tr>
+  <tr><td>3</td><td>Australia</td><td>2023</td><td>62250.00</td></tr>
+  <tr><td>4</td><td>Australia</td><td>2024</td><td>64500.00</td></tr>
+  <tr><td>5</td><td>Australia</td><td>2025</td><td>67900.00</td></tr>
 </table>
+
 
 
 
